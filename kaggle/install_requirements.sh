@@ -9,7 +9,8 @@ export PATH=/kaggle/conda/miniconda3/bin:$PATH
 ENV=myenv
 
 conda install -n base -c conda-forge mamba -y
-mamba create -n $ENV python=3.10 mkl=2024.0 -y
+mamba create -n $ENV python=3.10 -y
+mamba install -n $ENV -c conda-forge mkl==2024.0
 if [ -s conda-pkgs.txt ]; then
   echo "Installing conda packages (from conda-pkgs.txt) via conda-forge in batches..."
   xargs -a conda-pkgs.txt -n 8 mamba install -n $ENV -c conda-forge -y || {
