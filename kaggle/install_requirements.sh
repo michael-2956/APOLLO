@@ -35,9 +35,9 @@ source /kaggle/conda/miniconda3/etc/profile.d/conda.sh
 
 export CUDA_LABEL=nvidia/label/cuda-12.6.3
 
+mamba install -n $ENV -y pytorch torchvision torchaudio pytorch-cuda=12.4 -c pytorch -c nvidia
+
 mamba install -n $ENV -y \
   -c "$CUDA_LABEL" -c pytorch -c conda-forge \
   "cuda-version>=12.6,<12.7.0a0" \
   cuda-cudart cuda-cupti cuda-nvrtc cuda-nvtx cuda-opencl
-
-mamba install -y pytorch torchvision torchaudio pytorch-cuda=12.4 -c pytorch -c nvidia
