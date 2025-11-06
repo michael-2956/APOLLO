@@ -31,7 +31,7 @@ else
 fi
 
 source /kaggle/conda/miniconda3/etc/profile.d/conda.sh
-conda activate myenv
+# conda activate myenv
 
 export CUDA_LABEL=nvidia/label/cuda-12.6.3
 
