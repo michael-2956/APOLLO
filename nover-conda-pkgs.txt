@@ -1,0 +1,11 @@
+brotli-python
+ca-certificates
+intel-openmp
+ld_impl_linux-64
+libgcc-ng
+libjpeg-turbo
+libstdcxx-ng
+libwebp-base
+llvm-openmp
+lz4-c
+mkl-service
