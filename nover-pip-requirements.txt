@@ -3,7 +3,6 @@ async-timeout
 charset-normalizer
 compressed-tensors
 # cupy-cuda12x
-# cupy
 email-validator
 fastapi-cli
 googleapis-common-protos
@@ -39,7 +38,7 @@ opentelemetry-proto
 opentelemetry-sdk
 opentelemetry-semantic-conventions
 opentelemetry-semantic-conventions-ai
-outlines-core
+# outlines-core
 partial-json-parser
 prometheus-client
 prometheus-fastapi-instrumentator
