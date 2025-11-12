@@ -3,7 +3,7 @@ async-timeout
 charset-normalizer
 compressed-tensors
 # cupy-cuda12x
-cupy
+# cupy
 email-validator
 fastapi-cli
 googleapis-common-protos
