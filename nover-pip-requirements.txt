@@ -2,7 +2,8 @@ annotated-types
 async-timeout
 charset-normalizer
 compressed-tensors
-cupy-cuda12x
+# cupy-cuda12x
+cupy
 email-validator
 fastapi-cli
 googleapis-common-protos
