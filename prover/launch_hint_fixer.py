@@ -22,6 +22,10 @@ def launch_parallel_hint_search(data_jsonl, config, log_dir, node_rank=0, world_
     os.makedirs(log_dir, exist_ok=True)
 
     ngpus = torch.cuda.device_count()
+    ngpus_max = cfg.get('ngpus_max', None)
+    if ngpus_max is not None:
+        ngpus = min(ngpus_max, ngpus)
+        print(f"launch_hint_fixer.py: ngpus capped to {ngpus} by {ngpus_max = } in the config")
     assert ngpus >= 1
     
     # create data loader

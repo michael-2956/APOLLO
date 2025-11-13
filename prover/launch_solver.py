@@ -22,7 +22,7 @@ def launch_llm(data_path, config, log_dir, node_rank=0, world_size=1):
     ngpus_max = cfg.get('ngpus_max', None)
     if ngpus_max is not None:
         ngpus = min(ngpus_max, ngpus)
-        print(f"ngpus capped to {ngpus} by {ngpus_max = }")
+        print(f"launch_solver.py: ngpus capped to {ngpus} by {ngpus_max = } in the config")
     assert ngpus >= 1
     
     # create data loader
