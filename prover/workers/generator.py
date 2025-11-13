@@ -52,6 +52,7 @@ class GeneratorProcess(mp.Process):
 
         while True:
             inputs = self.task_queue.get()
+            print(f"RECEIVED TASKS: \n\n\n\n{inputs}\n\n\n\n")
             if inputs is None: # Terminate when receiving None
                 break
             model_inputs = [
