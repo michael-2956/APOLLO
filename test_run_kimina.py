@@ -36,6 +36,7 @@ text = tokenizer.apply_chat_template(
 )
 
 sampling_params = SamplingParams(temperature=0.6, top_p=0.95, max_tokens=8096)
+print(f"\n\n\n\nPROMPTS CONTENTS: \n {text} \n\n\n\n")
 output = model.generate(text, sampling_params=sampling_params)
 output_text = output[0].outputs[0].text
 print(output_text)

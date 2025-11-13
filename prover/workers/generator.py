@@ -85,6 +85,7 @@ class GeneratorProcess(mp.Process):
             else:
                 prompts = model_inputs
             if self.lora_path == '':
+                print(f"\n\n\n\nPROMPTS CONTENTS: \n {prompts} \n\n\n\n")
                 model_outputs = llm.generate(
                     prompts,
                     self.sampling_params,
