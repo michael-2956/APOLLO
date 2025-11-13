@@ -2,7 +2,7 @@ from vllm import LLM, SamplingParams
 from transformers import AutoTokenizer
 
 model_name = "AI-MO/Kimina-Prover-Distill-1.7B"
-model = LLM(model_name)
+model = LLM(model_name, trust_remote_code=True, max_model_len=30000)
 
 tokenizer = AutoTokenizer.from_pretrained(model_name, trust_remote_code=True)
 
