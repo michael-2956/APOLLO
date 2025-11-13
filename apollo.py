@@ -146,6 +146,7 @@ class ApolloRepair:
                     f.write(json.dumps(item, ensure_ascii=False) + "\n")
 
         # Now run the LLM solver on the sub-lemmas
+        print(f"DATA PATH:\n\n\n\n{data_path}\n\n\n\n")
         launch_llm(data_path, self.config, log_dir)
 
         # Next, update or finalize the main theorem
