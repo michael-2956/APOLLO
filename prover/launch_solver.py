@@ -65,6 +65,8 @@ def launch_llm(data_path, config, log_dir, node_rank=0, world_size=1):
         generator=generator_scheduler,
     ))
 
+    print(f"NUMBER OF SEARCH PROCESSES: \n\n\n\nmin({cfg.n_search_procs = }, {data_loader.size() = })\n\n\n\n")
+
     # launch search processes
     search_processes = [
         SearchProcess(
