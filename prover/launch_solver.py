@@ -19,6 +19,10 @@ def launch_llm(data_path, config, log_dir, node_rank=0, world_size=1):
     max_model_len = cfg.get('max_model_len', None)
 
     ngpus = torch.cuda.device_count()
+    ngpus_max = cfg.get('ngpus_max', None)
+    if ngpus_max is not None:
+        ngpus = min(ngpus_max, ngpus)
+        print(f"ngpus capped to {ngpus} by {ngpus_max = }")
     assert ngpus >= 1
     
     # create data loader

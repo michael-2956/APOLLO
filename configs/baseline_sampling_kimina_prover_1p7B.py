@@ -12,6 +12,7 @@ mode = 'cot_kimina' # chat templates can be changed in prover/utils.py
 pass_ = 32
 model_path = 'AI-MO/Kimina-Prover-Distill-1.7B'
 max_model_len = 30000  # instead of 39360
+ngpus_max = 1
 
 model_args = AttrDict(
     mode=mode,  
