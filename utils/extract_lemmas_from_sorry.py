@@ -20,6 +20,8 @@ class LemmaExtractor:
     
     def get_lemmas(self):
         sorry_states = self.verifier(self.code)['sorries']
+
+        print(f"SORRY STATES:\n\n\n\n{sorry_states}\n\n\n\n")
                 
         lemmas = []
         
