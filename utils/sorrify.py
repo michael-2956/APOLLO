@@ -392,6 +392,8 @@ class Sorrifier:
                         bar_format="{desc}: {n_fmt} cycles [{elapsed}]")
         
         err_info = self.verify_lean_code(self.proof_tree.code)
+
+        print("ERR_INFO:\n\n\n\n{err_info}\n\n\n\n")
         
         if err_info['pass']:
             return self.proof_tree.code
