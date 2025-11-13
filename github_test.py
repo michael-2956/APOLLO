@@ -30,7 +30,7 @@ theorem mathd_algebra_141 (a b : ℝ) (h₁ : a * b = 180) (h₂ : 2 * (a + b) =
 
 # Parameters
 max_attempts = 2 # maximum recursion depth
-config = 'configs/baseline_sampling_kimina_prover.py' # config file for LLM
+config = 'configs/baseline_sampling_kimina_prover_1p7B.py' # config file for LLM
 problem_dir = 'logs/test' # where to save final lean file and intermediate proof states
 
 # Instantiate the Apollo repair object
