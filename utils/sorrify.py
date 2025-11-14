@@ -355,6 +355,9 @@ class Sorrifier:
     def verify_and_fix_tree(self):
         try:
             return self.sorrify_code()
+        except UnboundLocalError as e:
+            print("\n\n\n\nCaught UnboundLocal Error IN SORRIFIER:", e, "\n\n\n\n")
+            raise e
         except Exception as e:
             main_goal = None
             print(f'Following Error occured in Sorrifier block: {e}')
