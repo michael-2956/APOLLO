@@ -33,7 +33,7 @@ def verify_lean4_file(code, lake_path=DEFAULT_LAKE_PATH, lean_workspace=DEFAULT_
     message_str = json.dumps(command, ensure_ascii=False)
     if verbose:
         print(message_str)
-    print(f"LEAN 4 ARGS: \n\n\n\n{message_str = }\n\ncwd = {lean_workspace}, {timeout =}\n\n\n\n")
+    print(f"LEAN 4 ARGS: \n\n\n\n{message_str = }\n\ncwd = {os.path.join(lean_workspace, "test/Mathlib/")}, {timeout =}\n\n\n\n")
     start_time = time.time()
     system_messages = ''
     try:
