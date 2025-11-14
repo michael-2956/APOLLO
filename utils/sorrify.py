@@ -398,7 +398,9 @@ class Sorrifier:
 
         print(f"ERR_INFO:\n\n\n\n{err_info = }\n\n\n\n")
 
-        print(f"Other info:\n\n\n\n{attempt_num = }\n{to_check = }\n\n\n\n")
+        print(f"Other info:\n\n\n\n{attempt_num = }\n{to_check = }\n{self.proof_tree.code.splitlines()[main_goal:] = }\n\n\n\n")
+
+        # assert attempt_num > 0
         
         if err_info['pass']:
             return self.proof_tree.code
