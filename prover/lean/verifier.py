@@ -33,16 +33,15 @@ def verify_lean4_file(code, lake_path=DEFAULT_LAKE_PATH, lean_workspace=DEFAULT_
     message_str = json.dumps(command, ensure_ascii=False)
     if verbose:
         print(message_str)
-    print(f"LEAN 4 ARGS: \n\n\n\n{message_str = }\n\ncwd = {os.path.join(lean_workspace, "test/Mathlib/")}, {timeout =}\n\n\n\n")
+    print(f"LEAN 4 ARGS: \n\n\n\n{message_str = }\n\ncwd = {lean_workspace}, {timeout =}\n\n\n\n")
     start_time = time.time()
     system_messages = ''
     try:
         with tempfile.TemporaryFile(mode='w+', encoding='utf-8') as temp_file:
             temp_file.write(message_str + "\r\n\r\n")
             temp_file.seek(0)
-            # lake env ../../.lake/build/bin/repl < file.in
-            outputs = subprocess.run([lake_path, "env", '../../.lake/build/bin/repl'], stdin=temp_file, capture_output=True, text=True, cwd=os.path.join(lean_workspace, "test/Mathlib/"), timeout=timeout)
-            # outputs = subprocess.run([lake_path, "exe", 'repl'], stdin=temp_file, capture_output=True, text=True, cwd=lean_workspace, timeout=timeout)
+            # outputs = subprocess.run([lake_path, "env", '../../.lake/build/bin/repl'], stdin=temp_file, capture_output=True, text=True, cwd=os.path.join(lean_workspace, "test/Mathlib/"), timeout=timeout)
+            outputs = subprocess.run([lake_path, "exe", 'repl'], stdin=temp_file, capture_output=True, text=True, cwd=lean_workspace, timeout=timeout)
         result = json.loads(outputs.stdout)
         ast_results = lean4_parser(code, result['ast']) if 'ast' in result and result['ast'] else {}
         result = {
